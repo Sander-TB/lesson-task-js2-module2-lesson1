@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const items = document.querySelectorAll("h4");
 const games = [
 	{ id: 324, name: "Great game", rating: 5.0 },
 	{ id: 124, name: "Ok game", rating: 3.0 },
@@ -7,14 +8,21 @@ const games = [
 	{ id: 4, name: "Mediocre game", rating: 3.0 },
 ];
 
-for (let i = 0; i < games.length; i++) {
-	const name = games[i].name;
-	const rating = games[i].rating;
-
+games.forEach(function (game) {
 	container.innerHTML += `
-	<div class="inner-container">
-	<h4>Name: ${name}</h4>
-	<p>Rating: ${rating}</p>
-	</div>
+	<h4>Name: ${game.name}</h4>
+	<p>Rating: ${game.rating}</p>
 	`;
+});
+
+items.forEach(function (item) {
+	item.addEventListener("click", toggleClass);
+});
+
+function toggleClass(e) {
+	event.target.classList.toggle("played");
 }
+
+// function toggleClass(event) {
+//     event.target.classList.toggle("played");
+// }
