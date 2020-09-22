@@ -1,5 +1,4 @@
 const container = document.querySelector(".container");
-const items = document.querySelectorAll("h4");
 const games = [
 	{ id: 324, name: "Great game", rating: 5.0 },
 	{ id: 124, name: "Ok game", rating: 3.0 },
@@ -10,19 +9,9 @@ const games = [
 
 games.forEach(function (game) {
 	container.innerHTML += `
+	<div class="inner-container">
 	<h4>Name: ${game.name}</h4>
 	<p>Rating: ${game.rating}</p>
+	<div>
 	`;
 });
-
-items.forEach(function (item) {
-	item.addEventListener("click", toggleClass);
-});
-
-function toggleClass(e) {
-	event.target.classList.toggle("played");
-}
-
-// function toggleClass(event) {
-//     event.target.classList.toggle("played");
-// }
