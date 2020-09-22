@@ -1,4 +1,15 @@
 .played {
-    color: red;
-    text-decoration: line-through;
+	color: red;
+	text-decoration: line-through;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.inner-container {
+	border: 2px solid black;
+	margin: 20px;
+	padding: 10px;
 }
